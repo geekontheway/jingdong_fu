@@ -14,7 +14,7 @@ require "rest"
 module JingdongFu
 
   SANDBOX = 'http://gw.api.sandbox.360buy.com/routerjson?'
-  PRODBOX = 'http://gw.api.360buy.com/routerjson?'
+  PRODBOX = 'http://gw.api.jd.com/routerjson?'
   USER_AGENT = 'jingdong_fu/1.1'
   REQUEST_TIMEOUT = 10
   API_VERSION = 2.0
@@ -58,7 +58,6 @@ module JingdongFu
         :access_token        => @settings['access_token'],
         :format              => OUTPUT_FORMAT,
         :v                   => API_VERSION,
-        :sign_method         => SIGN_ALGORITHM,
         :timestamp           => Time.now.strftime("%Y-%m-%d %H:%M:%S"),
         :method              => method,
         :'360buy_param_json' => param_json
